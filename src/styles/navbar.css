@@ -4,7 +4,7 @@
     height: 48px;
     border: none;
     position: sticky;
-    background-color: lightblue;
+    border: var(--testBorder);
     z-index: 100;
     display: flex;
     justify-content: center;
@@ -17,9 +17,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: var(--testBorder);
 }
 
 .navbar-chunk {
     display: flex;
     justify-content: space-evenly;
+    border: var(--testBorder);
 }

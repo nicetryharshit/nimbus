@@ -18,6 +18,7 @@ export default function NavBar()
                     <NavLink to="/wishlist"><button>Wishlist</button></NavLink>
                     <NavLink to="/cart"><button>Cart</button></NavLink>
                     <NavLink to="/login"><button>Login</button></NavLink>
+                    <NavLink to="/products"><button>Explore</button></NavLink>
                 </div>
             </div>
         </div>
