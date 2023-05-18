@@ -34,7 +34,7 @@ export default function ProductCard({ props })
                 <p>{price}</p>
             </div>
             <div>
-                {inStock === true ? <button onClick={handleAddToCartClick}>Add to cart</button> : <button>Out of stock</button>}
+                {inStock === true ? <button id="cart-button" onClick={handleAddToCartClick}>Add to cart</button> : <button>Out of stock</button>}
             </div>
         </div >
     );

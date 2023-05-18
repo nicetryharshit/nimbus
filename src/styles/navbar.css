@@ -1,7 +1,7 @@
 .navbar-container
 {
     width: 100%;
-    height: 48px;
+    height: 64px;
     border: 0;
     position: sticky;
     /* border: var(--testBorder); */
@@ -23,6 +23,13 @@
     /* border: var(--testBorder); */
 }
 
+.navbar button
+{
+    padding: 8px;
+    background-color: #ffffff00;
+    color: white
+}
+
 .navbar-chunk {
     /* border: var(--testBorder); */
     flex-grow: 1;
@@ -32,4 +39,16 @@
     margin: auto;
     padding-left: 2px;
     padding-right: 2px;
+}
+
+#search-bar
+{
+    height: 24px;
+    width: 256px;
+}
+
+#navbar-title
+{
+    padding-right: 2rem;
+    font-size:large;
 }

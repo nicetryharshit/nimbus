@@ -3,19 +3,34 @@
     display: flex;
     width: 100%;
     height: 100%;
-    border: var(--testBorder);
+    /* border: var(--testBorder); */
 }
   
 .filters-container
 {
     flex: 20%;
-    border: var(--testBorder);
+    /* border: var(--testBorder); */
 }
 
 .filters-content
 {
     margin: 10px;
     /* border: var(--testBorder); */
+}
+
+.filter-chunk
+{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.filters-header>span
+{
+    text-decoration: underline;
+}
+
+.filter-chunk > b
+{
+    color: var(--col-text-dark-1);
 }
 
 .products-container
@@ -35,7 +50,7 @@
     margin: 2rem;
     flex-wrap: wrap;
     gap: 2rem;
-    border: var(--testBorder);
+    /* border: var(--testBorder); */
 }
 
 .products-header

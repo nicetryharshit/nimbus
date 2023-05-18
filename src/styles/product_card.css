@@ -6,5 +6,13 @@
     max-height: 350px;
     min-width: 250px;
     max-width: 250px;
-    background-color: blue;
+    background-color: var(--col-1);
+    border: 0px solid white;
+    border-radius: 4px 4px;
+}
+
+#cart-button
+{
+    padding: 8px;
+    background-color: var(--col-2)
 }
