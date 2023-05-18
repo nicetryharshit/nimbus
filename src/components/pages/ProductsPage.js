@@ -8,6 +8,7 @@ import ProductCard from '../ui/ProductCard';
 export default function Products()
 {
     const [allProducts, setAllProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
     const [category, setCategory] = useState("All");
     const [maxPrice, setMaxPrice] = useState(20);
     const [minRating, setMinRating] = useState(0);
@@ -26,22 +27,28 @@ export default function Products()
         }
     };
 
+    const filterProducts = () =>
+    {
+        const filteredProducts = allProducts
+            .filter((element) => category === "All" ? true : element.categoryName === category)
+            .filter((element) => element.price <= maxPrice ? element : null)
+            .filter((element) => element.rating > minRating)
+            .sort((a, b) =>
+            {
+                return sorting === "HighToLow" ? b.price - a.price : sorting === "LowToHigh" ? a.price - b.price : 0;
+            });
+        setFilteredProducts(filteredProducts);
+    };
+
     useEffect(() =>
     {
         fetchAllProducts();
     }, []);
 
-    const productsToDisplay = () =>
+    useEffect(() =>
     {
-        return allProducts
-            .filter((element) => category === "All" ? true : element.categoryName === category)
-            .filter((element) => element.price <= maxPrice ? element : null)
-            .filter((element) => element.rating > minRating).
-            sort((a, b) =>
-            {
-                return sorting === "HighToLow" ? b.price - a.price : sorting === "LowToHigh" ? a.price - b.price : 0;
-            });
-    };
+        filterProducts();
+    }, [allProducts]);
 
     return (
         <div>
@@ -53,8 +60,11 @@ export default function Products()
                     </div>
                 </div>
                 <div className="products-container">
+                    <div className="product-header">
+                        <h2>Showing {category} books ({filteredProducts.length} books)</h2>
+                    </div>
                     <div className="products-content">
-                        {productsToDisplay().map((element) => <ProductCard props={element} />)}
+                        {filteredProducts.map((element) => <ProductCard props={element} />)}
                     </div>
                 </div>
             </div>
