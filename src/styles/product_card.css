@@ -1,7 +1,7 @@
 .product-card
 {
-    flex: 1 0 calc(25% - 20px);
-    margin: 5px;
+    flex: 1 0 calc(25%);
+    /* margin: 5px; */
     min-height: 350px;
     max-height: 350px;
     min-width: 250px;

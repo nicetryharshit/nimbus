@@ -26,15 +26,14 @@
 
 .products-content
 {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 10px;
+    grid-gap: 20px;
     justify-content: center;
-    justify-items: center;
-
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* justify-content: space-around; */
-    /* margin: 10px; */
-    /* border: var(--testBorder); */
+    justify-items: center; */
+    display: flex;
+    margin: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    border: var(--testBorder);
 }

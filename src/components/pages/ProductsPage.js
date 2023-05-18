@@ -8,7 +8,10 @@ import ProductCard from '../ui/ProductCard';
 export default function Products()
 {
     const [allProducts, setAllProducts] = useState([]);
-
+    const [category, setCategory] = useState("All");
+    const [maxPrice, setMaxPrice] = useState(20);
+    const [minRating, setMinRating] = useState(0);
+    const [sorting, setSorting] = useState("None");
     const fetchAllProducts = async () =>
     {
         try
@@ -30,7 +33,14 @@ export default function Products()
 
     const productsToDisplay = () =>
     {
-        return allProducts;
+        return allProducts
+            .filter((element) => category === "All" ? true : element.categoryName === category)
+            .filter((element) =>
+            {
+                const finalPrice = element.discountPercentage > 0 ? (element.price * (element.discountPercentage * 0.01)).toFixed(2) : element.price;
+                return finalPrice <= maxPrice ? element : null;
+            })
+            .filter((element) => element.rating > minRating);
     };
 
     return (
