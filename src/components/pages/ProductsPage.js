@@ -35,12 +35,12 @@ export default function Products()
     {
         return allProducts
             .filter((element) => category === "All" ? true : element.categoryName === category)
-            .filter((element) =>
+            .filter((element) => element.price <= maxPrice ? element : null)
+            .filter((element) => element.rating > minRating).
+            sort((a, b) =>
             {
-                const finalPrice = element.discountPercentage > 0 ? (element.price * (element.discountPercentage * 0.01)).toFixed(2) : element.price;
-                return finalPrice <= maxPrice ? element : null;
-            })
-            .filter((element) => element.rating > minRating);
+                return sorting === "HighToLow" ? b.price - a.price : sorting === "LowToHigh" ? a.price - b.price : 0;
+            });
     };
 
     return (

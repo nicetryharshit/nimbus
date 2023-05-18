@@ -5,10 +5,12 @@
     border: none;
     position: sticky;
     /* border: var(--testBorder); */
+    top: 0;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: thistle;
 }
 
 .navbar

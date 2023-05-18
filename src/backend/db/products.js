@@ -13,7 +13,6 @@ export const products = [
     price: 12.99,
     categoryName: "Sci-Fi",
     rating: 2.5,
-    discountPercentage: 50,
     imagePath: "",
     inStock: true
   },
@@ -24,7 +23,6 @@ export const products = [
     price: 9.99,
     categoryName: "Mystery",
     rating: 3.2,
-    discountPercentage: 0,
     imagePath: "",
     inStock: true
   },
@@ -35,7 +33,6 @@ export const products = [
     price: 14.99,
     categoryName: "Fantasy",
     rating: 4.8,
-    discountPercentage: 60,
     imagePath: "",
     inStock: true
   },
@@ -46,7 +43,6 @@ export const products = [
     price: 10.99,
     categoryName: "Sci-Fi",
     rating: 1.4,
-    discountPercentage: 25,
     imagePath: "",
     inStock: true
   },
@@ -57,7 +53,6 @@ export const products = [
     price: 11.99,
     categoryName: "Mystery",
     rating: 0.5,
-    discountPercentage: 0,
     imagePath: "",
     inStock: false
   },
@@ -68,7 +63,6 @@ export const products = [
     price: 13.99,
     categoryName: "Fantasy",
     rating: 2.7,
-    discountPercentage: 0,
     imagePath: "",
     inStock: true
   },
@@ -79,7 +73,6 @@ export const products = [
     price: 10.99,
     categoryName: "Sci-Fi",
     rating: 4.6,
-    discountPercentage: 55,
     imagePath: "",
     inStock: true
   },
@@ -90,7 +83,6 @@ export const products = [
     price: 9.99,
     categoryName: "Mystery",
     rating: 4.3,
-    discountPercentage: 65,
     imagePath: "",
     inStock: true
   },
@@ -101,7 +93,6 @@ export const products = [
     price: 14.99,
     categoryName: "Fantasy",
     rating: 4.9,
-    discountPercentage: 0,
     imagePath: "",
     inStock: false
   },
@@ -112,7 +103,6 @@ export const products = [
     price: 11.99,
     categoryName: "Sci-Fi",
     rating: 3.5,
-    discountPercentage: 70,
     imagePath: "",
     inStock: true
   },
@@ -123,7 +113,6 @@ export const products = [
     price: 10.99,
     categoryName: "Mystery",
     rating: 4.2,
-    discountPercentage: 40,
     imagePath: "",
     inStock: true
   },
@@ -134,7 +123,6 @@ export const products = [
     price: 14.99,
     categoryName: "Fantasy",
     rating: 4.8,
-    discountPercentage: 60,
     imagePath: "",
     inStock: true
   },
@@ -145,7 +133,6 @@ export const products = [
     price: 12.99,
     categoryName: "Sci-Fi",
     rating: 4.4,
-    discountPercentage: 25,
     imagePath: "",
     inStock: true
   },
@@ -156,7 +143,6 @@ export const products = [
     price: 9.99,
     categoryName: "Mystery",
     rating: 2.0,
-    discountPercentage: 35,
     imagePath: "",
     inStock: true
   },
@@ -167,7 +153,6 @@ export const products = [
     price: 13.99,
     categoryName: "Fantasy",
     rating: 4.7,
-    discountPercentage: 0,
     imagePath: "",
     inStock: true
   },
@@ -178,7 +163,6 @@ export const products = [
     price: 10.99,
     categoryName: "Sci-Fi",
     rating: 1.6,
-    discountPercentage: 55,
     imagePath: "",
     inStock: false
   },
@@ -189,7 +173,6 @@ export const products = [
     price: 11.99,
     categoryName: "Mystery",
     rating: 4.3,
-    discountPercentage: 65,
     imagePath: "",
     inStock: true
   },
@@ -200,7 +183,6 @@ export const products = [
     price: 14.99,
     categoryName: "Fantasy",
     rating: 3.9,
-    discountPercentage: 30,
     imagePath: "",
     inStock: true
   },
@@ -211,7 +193,6 @@ export const products = [
     price: 12.99,
     categoryName: "Fantasy",
     rating: 1.5,
-    discountPercentage: 70,
     imagePath: "",
     inStock: true
   },
@@ -222,7 +203,6 @@ export const products = [
     price: 10.99,
     categoryName: "Sci-Fi",
     rating: 0.4,
-    discountPercentage: 0,
     imagePath: "",
     inStock: true
   }
