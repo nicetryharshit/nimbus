@@ -6,16 +6,17 @@ import { API_ENDPOINTS } from '../../constants';
 import '../../styles/product_page.css';
 
 
-export default function Product()
+export default function ProductPage()
 {
-    const { id } = useParams();
+    const { _id } = useParams();
     const [product, setProduct] = useState();
-    const { author, title, price, inStock, rating } = product;
+    const { author, title, price, inStock, rating } = product || {};
     const fetchProductByID = async () =>
     {
+        console.log("RECEIVING ID:" + _id);
         try
         {
-            const res = await fetch(API_ENDPOINTS.PRODUCT_BY_ID(id));
+            const res = await fetch(API_ENDPOINTS.PRODUCT_BY_ID(_id));
             const data = await res.json();
             setProduct(data.product);
         }
@@ -31,7 +32,7 @@ export default function Product()
     return (
         <div>
             <NavBar />
-            <div className="body-container">
+            <div className="product-info-body-container">
                 <div className="product-info-card">
                     <p>{author}</p>
                     <p>{title}</p>

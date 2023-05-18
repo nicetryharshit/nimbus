@@ -41,6 +41,7 @@ export default function StorePage()
             {
                 return sorting === "HighToLow" ? b.price - a.price : sorting === "LowToHigh" ? a.price - b.price : 0;
             });
+        filteredProducts.map((element) => console.log(element._id));
         setFilteredProducts(filteredProducts);
     };
 

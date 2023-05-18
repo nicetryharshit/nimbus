@@ -9,7 +9,7 @@ export default function ProductCard({ props })
     const navigate = useNavigate();
     const handleCardClick = () =>
     {
-        console.log("ID: " + _id);
+        console.log("SENDING ID:" + _id);
         navigate(`/product/${_id}`);
     };
     const handleAddToCartClick = (event) =>
