@@ -3,7 +3,7 @@ import '../../styles/product_card.css';
 
 export default function ProductCard({ props })
 {
-    console.log(props);
+    // console.log(props);
     const { author, title, price, inStock, rating } = props;
     return (
         <div className="product-card">
