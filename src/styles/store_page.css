@@ -37,3 +37,16 @@
     gap: 2rem;
     border: var(--testBorder);
 }
+
+.products-header
+{
+    display: flex;
+    margin: 2rem;
+    justify-content: center;    
+}
+.filters-header
+{
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}

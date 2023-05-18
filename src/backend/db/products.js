@@ -52,7 +52,7 @@ export const products = [
     author: "Dan Brown",
     price: 11.99,
     categoryName: "Mystery",
-    rating: 0.5,
+    rating: 1.5,
     imagePath: "",
     inStock: false
   },
@@ -202,7 +202,7 @@ export const products = [
     author: "Philip K. Dick",
     price: 10.99,
     categoryName: "Sci-Fi",
-    rating: 0.4,
+    rating: 2.4,
     imagePath: "",
     inStock: true
   }
