@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate, NavLink } from "react-router-dom";
 import '../../styles/navbar.css';
 import '../../styles/styles.css';
-import { SearchContext } from '../contexts/SearchContext';
+import { SearchContext } from '../contexts/GlobalContexts';
 
 export default function NavBar()
 {
