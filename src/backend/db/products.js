@@ -12,7 +12,7 @@ export const products = [
     author: "Frank Herbert",
     price: "12.99",
     categoryName: "Sci-Fi",
-    rating: 4.5,
+    rating: 2.5,
     discountPercentage: 50,
     imagePath: "",
     inStock: true
@@ -23,8 +23,8 @@ export const products = [
     author: "Stieg Larsson",
     price: "9.99",
     categoryName: "Mystery",
-    rating: 4.2,
-    discountPercentage: 40,
+    rating: 3.2,
+    discountPercentage: 0,
     imagePath: "",
     inStock: true
   },
@@ -45,7 +45,7 @@ export const products = [
     author: "William Gibson",
     price: "10.99",
     categoryName: "Sci-Fi",
-    rating: 4.4,
+    rating: 1.4,
     discountPercentage: 25,
     imagePath: "",
     inStock: true
@@ -56,10 +56,10 @@ export const products = [
     author: "Dan Brown",
     price: "11.99",
     categoryName: "Mystery",
-    rating: 4.0,
-    discountPercentage: 35,
+    rating: 0.5,
+    discountPercentage: 0,
     imagePath: "",
-    inStock: true
+    inStock: false
   },
   {
     _id: uuid(),
@@ -67,8 +67,8 @@ export const products = [
     author: "J.R.R. Tolkien",
     price: "13.99",
     categoryName: "Fantasy",
-    rating: 4.7,
-    discountPercentage: 45,
+    rating: 2.7,
+    discountPercentage: 0,
     imagePath: "",
     inStock: true
   },
@@ -101,9 +101,9 @@ export const products = [
     price: "14.99",
     categoryName: "Fantasy",
     rating: 4.9,
-    discountPercentage: 30,
+    discountPercentage: 0,
     imagePath: "",
-    inStock: true
+    inStock: false
   },
   {
     _id: uuid(),
@@ -111,7 +111,7 @@ export const products = [
     author: "Neal Stephenson",
     price: "11.99",
     categoryName: "Sci-Fi",
-    rating: 4.5,
+    rating: 3.5,
     discountPercentage: 70,
     imagePath: "",
     inStock: true
@@ -155,7 +155,7 @@ export const products = [
     author: "Agatha Christie",
     price: "9.99",
     categoryName: "Mystery",
-    rating: 4.0,
+    rating: 2.0,
     discountPercentage: 35,
     imagePath: "",
     inStock: true
@@ -167,7 +167,7 @@ export const products = [
     price: "13.99",
     categoryName: "Fantasy",
     rating: 4.7,
-    discountPercentage: 45,
+    discountPercentage: 0,
     imagePath: "",
     inStock: true
   },
@@ -177,10 +177,10 @@ export const products = [
     author: "Ernest Cline",
     price: "10.99",
     categoryName: "Sci-Fi",
-    rating: 4.6,
+    rating: 1.6,
     discountPercentage: 55,
     imagePath: "",
-    inStock: true
+    inStock: false
   },
   {
     _id: uuid(),
@@ -199,7 +199,7 @@ export const products = [
     author: "J.K. Rowling",
     price: "14.99",
     categoryName: "Fantasy",
-    rating: 4.9,
+    rating: 3.9,
     discountPercentage: 30,
     imagePath: "",
     inStock: true
@@ -210,7 +210,7 @@ export const products = [
     author: "Christopher Paolini",
     price: "12.99",
     categoryName: "Fantasy",
-    rating: 4.5,
+    rating: 1.5,
     discountPercentage: 70,
     imagePath: "",
     inStock: true
@@ -221,8 +221,8 @@ export const products = [
     author: "Philip K. Dick",
     price: "10.99",
     categoryName: "Sci-Fi",
-    rating: 4.4,
-    discountPercentage: 25,
+    rating: 0.4,
+    discountPercentage: 0,
     imagePath: "",
     inStock: true
   }
