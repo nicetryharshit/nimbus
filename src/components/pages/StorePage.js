@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import NavBar from '../ui/NavBar';
-import '../../styles/products_page.css';
+import '../../styles/store_page.css';
 import { useState, useEffect } from 'react';
 import { API_ENDPOINTS } from '../../constants';
 import ProductCard from '../ui/ProductCard';
-import { SearchContext } from '../contexts/SearchContext';
+import { SearchContext } from '../contexts/GlobalContexts';
 
 const defaultMaxPrice = 20;
-export default function Products()
+export default function StorePage()
 {
     const { searchQuery } = useContext(SearchContext);
     const [allProducts, setAllProducts] = useState([]);

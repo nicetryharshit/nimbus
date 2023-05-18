@@ -1,0 +1,15 @@
+.body-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.product-info-card
+{
+    border-radius: 8px;
+    background-color: thistle;
+    padding: 16px;
+}

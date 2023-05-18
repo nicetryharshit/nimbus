@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import { SearchProvider } from "./components/contexts/SearchContext";
+import { SearchProvider } from "./components/contexts/GlobalContexts";
 
 // Call make Server
 makeServer();

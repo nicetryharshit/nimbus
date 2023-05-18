@@ -17,7 +17,7 @@ export default function NavBar()
     {
         if (event.key === 'Enter')
         {
-            navigate('/products');
+            navigate('/store');
         }
     };
 
@@ -27,13 +27,13 @@ export default function NavBar()
                 <div className="navbar-chunk">
                     <NavLink className="navbar-item" to="/"><button className="navbar-title">Nimbus</button></NavLink>
                     <input className="navbar-item" type="text" placeholder="Search for products" onKeyDown={handleSearchKeyDown} onChange={handleSearchInputChange} value={searchQuery} />
-                    <NavLink className="navbar-item" to="/products"><button>Search</button></NavLink>
+                    <NavLink className="navbar-item" to="/store"><button>Search</button></NavLink>
                 </div>
                 <div className="navbar-chunk">
                     <NavLink className="navbar-item" to="/wishlist"><button>Wishlist</button></NavLink>
                     <NavLink className="navbar-item" to="/cart"><button>Cart</button></NavLink>
                     <NavLink className="navbar-item" to="/login"><button>Login</button></NavLink>
-                    <NavLink className="navbar-item" to="/products"><button>Explore</button></NavLink>
+                    <NavLink className="navbar-item" to="/store"><button>Explore</button></NavLink>
                 </div>
             </div>
         </div>

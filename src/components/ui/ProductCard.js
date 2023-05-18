@@ -1,12 +1,24 @@
 import React from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../../styles/product_card.css';
 
 export default function ProductCard({ props })
 {
     // console.log(props);
-    const { author, title, price, inStock, rating } = props;
+    const { _id, author, title, price, inStock, rating } = props;
+    const navigate = useNavigate();
+    const handleCardClick = () =>
+    {
+        console.log("ID: " + _id);
+        navigate(`/product/${_id}`);
+    };
+    const handleAddToCartClick = (event) =>
+    {
+        event.stopPropagation();
+        console.log("Add to cart");
+    };
     return (
-        <div className="product-card">
+        <div className="product-card" onClick={handleCardClick}>
             {/* <img src={imagePath} alt={`Image for the book: ${title}`} /> */}
             <div className="product-card-header">
                 <i>{rating}</i>
@@ -22,8 +34,8 @@ export default function ProductCard({ props })
                 <p>{price}</p>
             </div>
             <div>
-                {inStock === true ? <button>Add to cart</button> : <button>Out of stock</button>}
+                {inStock === true ? <button onClick={handleAddToCartClick}>Add to cart</button> : <button>Out of stock</button>}
             </div>
-        </div>
+        </div >
     );
 }
