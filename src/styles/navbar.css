@@ -2,7 +2,7 @@
 {
     width: 100%;
     height: 48px;
-    border: none;
+    border: 0;
     position: sticky;
     /* border: var(--testBorder); */
     top: 0;
@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: thistle;
+    background-color: var(--col-4);
 }
 
 .navbar
