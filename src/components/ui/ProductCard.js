@@ -25,7 +25,7 @@ export default function ProductCard({ props })
     return (
         <div className="product-card" onClick={handleCardClick}>
             <div className="product-card-image">
-                <img src={bookCover} alt={`Image for the book: ${title}`} />
+                <img src={bookCover} alt={`book: ${title}`} />
                 {/* <i>{rating}</i> */}
             </div>
             <div className="product-card-desc">
