@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import { SearchProvider } from "./components/contexts/GlobalContexts";
+import { AuthProvider, SearchProvider } from "./components/contexts/GlobalContexts";
 
 // Call make Server
 makeServer();
@@ -12,9 +12,11 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <SearchProvider>
-        <App />
-      </SearchProvider>
+      <AuthProvider>
+        <SearchProvider>
+          <App />
+        </SearchProvider>
+      </AuthProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

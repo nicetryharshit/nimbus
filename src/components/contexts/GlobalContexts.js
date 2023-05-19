@@ -1,6 +1,8 @@
 import { createContext, useState } from "react";
 
 export const SearchContext = createContext();
+export const AuthContext = createContext();
+
 export function SearchProvider({ children })
 {
     const [searchQuery, setSearchQuery] = useState("");
@@ -14,3 +16,19 @@ export function SearchProvider({ children })
         {children}
     </SearchContext.Provider>)
 };
+
+
+export function AuthProvider({ children })
+{
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    console.log("is logged in: " + isLoggedIn);
+    const handleLoginUpdate = (state) =>
+    {
+        setIsLoggedIn(state);
+    };
+
+    return (<AuthContext.Provider value={{ isLoggedIn, handleLoginUpdate }}>
+        {children}
+    </AuthContext.Provider>)
+}
