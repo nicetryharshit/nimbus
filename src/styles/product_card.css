@@ -1,17 +1,83 @@
 .product-card
 {
-    flex: 1 0 calc(25%);
-    /* margin: 5px; */
-    min-height: 350px;
-    max-height: 350px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    min-height: 400px;
+    max-height: 400px;
     min-width: 250px;
     max-width: 250px;
-    background-color: var(--col-1);
+    /* background-color: var(--col-1); */
     border: 0px solid white;
     border-radius: 4px 4px;
 }
 
+.product-card>div
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.product-card-image
+{
+    display: flex;
+    justify-content: center;
+    background-color: var(--col-1);
+    max-height: 66%;
+}
+.product-card-image>img
+{
+    padding:1rem;
+}
+
+.product-card-desc
+{
+    display: flex;
+    flex-direction: column;
+}
+.product-card-desc > p
+{
+    padding :0;
+    margin:0;
+    border:0;
+}
+.product-card-desc > b
+{
+    overflow: hidden;
+    white-space: nowrap;
+}
+.product-card-price > p
+{
+    padding :0;
+    margin:0;
+    border:0;
+}
+
+.product-card-buttons
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-card-buttons>button
+{
+    width: 100%;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+#wishlist-button
+{
+    padding: 8px;
+    color: white;
+    background-color: var(--col-3)
+
+}
 #cart-button
+{
+    padding: 8px;
+    color: white;
+    background-color: var(--col-4)
+}
+#outOfStock-button
 {
     padding: 8px;
     background-color: var(--col-2)

@@ -15,21 +15,38 @@
 .filters-content
 {
     margin: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
     /* border: var(--testBorder); */
 }
 
 .filter-chunk
 {
+    width: 80%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    border-top: 2px solid var(--col-1);
 }
 .filters-header>span
 {
     text-decoration: underline;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .filter-chunk > b
 {
+    display: flex;
+    /* padding-left: 48px; */
+    padding-bottom: 16px;
+    color: var(--col-text-dark-1);
+}
+.filter-chunk > div
+{
+    /* padding-left: 48px;
+    padding-bottom: 16px; */
     color: var(--col-text-dark-1);
 }
 

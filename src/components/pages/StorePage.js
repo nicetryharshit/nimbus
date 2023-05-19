@@ -19,6 +19,10 @@ export default function StorePage()
     const [sorting, setSorting] = useState("None");
     const ratings = ['1', '2', '3', '4'];
 
+    const isDefaultFilters = () =>
+    {
+        return (allCategories.every(category => selectedCategories.includes(category.categoryName)) && selectedMinRating === '1' && selectedMaxPrice === defaultMaxPrice);
+    };
     const handleCategorySelect = (event, categoryId) =>
     {
         if (event.target.checked)
@@ -42,6 +46,12 @@ export default function StorePage()
         setSelectedMaxPrice(event.target.value);
     };
 
+    const handleClearFilters = () =>
+    {
+        setSelectedCategories(allCategories.map((element) => element.categoryName));
+        setSelectedMaxPrice(defaultMaxPrice);
+        setSelectedMinRating('1');
+    };
     const fetchAllProducts = async () =>
     {
         try
@@ -105,21 +115,21 @@ export default function StorePage()
             <div className="body-container">
                 <div className="filters-container">
                     <div className="filters-header">
-                        <b>Filters</b>
-                        <span>Clear</span>
+                        <h2>Filters</h2>
+                        {!isDefaultFilters() && (<span onClick={handleClearFilters}>Clear</span>)}
                     </div>
                     <div className="filters-content">
                         <div className="filter-chunk">
                             <b>Price ({selectedMaxPrice})</b>
                             <div>
                                 <span>0</span>
-                                <input type="range" id="price" name="price" min="0" max={defaultMaxPrice} onChange={handleMaxPriceChange}>
+                                <input type="range" value={selectedMaxPrice} id="price" name="price" min="0" max={defaultMaxPrice} onChange={handleMaxPriceChange}>
                                 </input>
                                 <span>20</span>
                             </div>
                         </div>
                         <div className="filter-chunk">
-                            <b>Category</b>
+                            <b>Categories</b>
                             <div>
                                 {allCategories.map(element => (
                                     <div>
@@ -156,10 +166,10 @@ export default function StorePage()
                 </div>
                 <div className="products-container">
                     <div className="products-header">
-                        <b>Showing {filteredProducts.length} books</b>
+                        <h2>Showing {filteredProducts.length} books</h2>
                     </div>
                     <div className="products-content">
-                        {filteredProducts.map((element) => <ProductCard props={element} />)}
+                        {filteredProducts.length > 0 ? filteredProducts.map((element) => <ProductCard props={element} />) : <b>Nothing to show. Try changing filters.</b>}
                     </div>
                 </div>
             </div>
