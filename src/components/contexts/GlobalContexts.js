@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export const SearchContext = createContext();
 export const AuthContext = createContext();
@@ -21,11 +22,24 @@ export function SearchProvider({ children })
 export function AuthProvider({ children })
 {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userData, setUserData] = useState();
 
-    console.log("is logged in: " + isLoggedIn);
-    const handleLoginUpdate = (state) =>
+
+    const handleLoginUpdate = (state, data) =>
     {
         setIsLoggedIn(state);
+
+        //if logged in set token too; else remove
+        if (state === true)
+        {
+            setUserData(data);
+        }
+        else
+        {
+            setUserData({});
+        }
+        console.log("Is logged in: " + isLoggedIn);
+        console.log("DATA: " + userData);
     };
 
     return (<AuthContext.Provider value={{ isLoggedIn, handleLoginUpdate }}>

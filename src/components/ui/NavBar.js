@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import { useNavigate, NavLink } from "react-router-dom";
 import '../../styles/navbar.css';
 import '../../styles/styles.css';
-import { SearchContext } from '../contexts/GlobalContexts';
+import { AuthContext, SearchContext } from '../contexts/GlobalContexts';
 
 export default function NavBar()
 {
     const navigate = useNavigate();
     const { searchQuery, handleSearchQueryUpdate } = useContext(SearchContext);
+    const { isLoggedIn, handleLoginUpdate } = useContext(AuthContext);
     const handleSearchInputChange = (event) =>
     {
         handleSearchQueryUpdate(event.target.value);
@@ -32,10 +33,12 @@ export default function NavBar()
                 <div className="navbar-chunk">
                     <NavLink className="navbar-item" to="/wishlist"><button>Wishlist</button></NavLink>
                     <NavLink className="navbar-item" to="/cart"><button>Cart</button></NavLink>
-                    <NavLink className="navbar-item" to="/login"><button>Login</button></NavLink>
+                    {!isLoggedIn
+                        ? <NavLink className="navbar-item" to="/login"><button>Login</button></NavLink>
+                        : (<button onClick={() => handleLoginUpdate(false, null)} >Logout</button>)}
                     <NavLink className="navbar-item" to="/store"><button>Explore</button></NavLink>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }

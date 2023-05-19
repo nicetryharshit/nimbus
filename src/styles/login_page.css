@@ -1,0 +1,6 @@
+.login-container
+{
+    flex-grow: 1;
+    flex-direction: column;
+    height: calc(100vh - 71px);
+}
