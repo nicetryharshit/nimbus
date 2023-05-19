@@ -1,11 +1,13 @@
-import React from 'react';
+import { React, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/product_card.css';
 import bookCover from '../../images/book-cover.png';
+import { AuthContext } from '../contexts/GlobalContexts';
 
 export default function ProductCard({ props })
 {
-    // console.log(props);
+    const { isLoggedIn } = useContext(AuthContext);
+
     const { _id, author, title, price, inStock, rating, imagePath } = props;
     const navigate = useNavigate();
     const handleCardClick = () =>
@@ -15,12 +17,18 @@ export default function ProductCard({ props })
     const handleAddToCartClick = (event) =>
     {
         event.stopPropagation();
-        console.log("Add to cart");
+        if (isLoggedIn)
+            console.log("Add to cart");
+        else
+            navigate(`/login`);
     };
     const handleWishlistClick = (event) =>
     {
         event.stopPropagation();
-        console.log("Wishlist");
+        if (isLoggedIn)
+            console.log("Add to Wishlist");
+        else
+            navigate(`/login`);
     };
     return (
         <div className="product-card" onClick={handleCardClick}>

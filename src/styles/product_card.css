@@ -9,12 +9,13 @@
     /* background-color: var(--col-1); */
     border: 0px solid white;
     border-radius: 4px 4px;
+    cursor: pointer;
 }
 
 .product-card>div
 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
 .product-card-image
