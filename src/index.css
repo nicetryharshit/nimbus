@@ -1,6 +1,23 @@
-body {
+:root
+{
+  --testBorder: 1px dashed blue;
+  --col-0: #ffffff;
+  --col-1: #ebe9e9;
+  --col-2: #AFD3E2;
+  --col-3: #19A7CE;
+  --col-4: #146C94;
+  --col-text-dark-1: #423d3d;
+  --col-text-dark-2: #2c2a2a;
+  --col-text-dark-2: #1d1c1c;
+
+}
+body, html, button {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  border: 0;
+  background-color: var(--col-0);
+  box-sizing: border-box;
+  font-family: 'Lexend Deca', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

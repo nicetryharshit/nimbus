@@ -8,20 +8,20 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    categoryName: "Sci-Fi",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Explore mind-bending worlds of advanced technology, interstellar travel, and futuristic possibilities.",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "Mystery",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Uncover thrilling secrets, solve puzzling crimes, and unravel enigmatic plots in a race against time.",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    categoryName: "Fantasy",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Uncover thrilling secrets, solve puzzling crimes, and unravel enigmatic plots in a race against time.",
   },
 ];

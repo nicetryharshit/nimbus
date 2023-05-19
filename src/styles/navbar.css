@@ -1,25 +1,54 @@
 .navbar-container
 {
     width: 100%;
-    height: 48px;
-    border: none;
+    height: 64px;
+    border: 0;
     position: sticky;
-    background-color: lightblue;
+    /* border: var(--testBorder); */
+    top: 0;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--col-4);
 }
 
 .navbar
 {
-    width: 80%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items:center;
+    /* border: var(--testBorder); */
+}
+
+.navbar button
+{
+    padding: 8px;
+    background-color: #ffffff00;
+    color: white
 }
 
 .navbar-chunk {
-    display: flex;
-    justify-content: space-evenly;
+    /* border: var(--testBorder); */
+    flex-grow: 1;
+}
+
+.navbar-item {
+    margin: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#search-bar
+{
+    height: 24px;
+    width: 256px;
+}
+
+#navbar-title
+{
+    padding-right: 2rem;
+    font-size:large;
 }

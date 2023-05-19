@@ -1,13 +1,15 @@
 import "./App.css";
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home";
-import Products from "./components/pages/Products";
-import Product from "./components/pages/Product";
-import Wishlist from "./components/pages/Wishlist";
-import Cart from "./components/pages/Cart";
-import Login from "./components/pages/Login";
-import Signup from "./components/pages/Signup";
+import Home from "./components/pages/HomePage";
+import StorePage from "./components/pages/StorePage";
+import ProductPage from "./components/pages/ProductPage";
+import Wishlist from "./components/pages/WishlistPage";
+import Cart from "./components/pages/CartPage";
+import Login from "./components/pages/LoginPage";
+import Signup from "./components/pages/SignupPage";
+
+import Mockman from "mockman-js";
 
 function App()
 {
@@ -15,12 +17,13 @@ function App()
 		<div className="App">
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route exact path="/products" element={<Products />} />
-				<Route path="/product:id" element={<Product />} />
+				<Route exact path="/store" element={<StorePage />} />
+				<Route path="/product/:_id" element={<ProductPage />} />
 				<Route exact path="/wishlist" element={<Wishlist />} />
 				<Route exact path="/cart" element={<Cart />} />
 				<Route exact path="/login" element={<Login />} />
 				<Route exact path="/signup" element={<Signup />} />
+				<Route exact path="/mockman" element={<Mockman />} />
 			</Routes>
 		</div >
 	);

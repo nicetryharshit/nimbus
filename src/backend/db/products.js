@@ -8,23 +8,202 @@ import { v4 as uuid } from "uuid";
 export const products = [
   {
     _id: uuid(),
-    title: "You Can WIN",
-    author: "Shiv Khera",
-    price: "5000",
-    categoryName: "non-fiction",
+    title: "Dune",
+    author: "Frank Herbert",
+    price: 12.99,
+    categoryName: "Sci-Fi",
+    rating: 2.5,
+    imagePath: "",
+    inStock: true
   },
   {
     _id: uuid(),
-    title: "You are Winner",
-    author: "Junaid Qureshi",
-    price: "3000",
-    categoryName: "horror",
+    title: "The Girl with the Dragon Tattoo",
+    author: "Stieg Larsson",
+    price: 9.99,
+    categoryName: "Mystery",
+    rating: 3.2,
+    imagePath: "",
+    inStock: true
   },
   {
     _id: uuid(),
-    title: "Think and Grow Rich",
-    author: "Shiv Khera",
-    price: "1000",
-    categoryName: "fiction",
+    title: "Harry Potter and the Sorcerer's Stone",
+    author: "J.K. Rowling",
+    price: 14.99,
+    categoryName: "Fantasy",
+    rating: 4.8,
+    imagePath: "",
+    inStock: true
   },
+  {
+    _id: uuid(),
+    title: "Neuromancer",
+    author: "William Gibson",
+    price: 10.99,
+    categoryName: "Sci-Fi",
+    rating: 1.4,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    price: 11.99,
+    categoryName: "Mystery",
+    rating: 1.5,
+    imagePath: "",
+    inStock: false
+  },
+  {
+    _id: uuid(),
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    price: 13.99,
+    categoryName: "Fantasy",
+    rating: 2.7,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "Ender's Game",
+    author: "Orson Scott Card",
+    price: 10.99,
+    categoryName: "Sci-Fi",
+    rating: 4.6,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "Gone Girl",
+    author: "Gillian Flynn",
+    price: 9.99,
+    categoryName: "Mystery",
+    rating: 4.3,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "The Lord of the Rings: The Fellowship of the Ring",
+    author: "J.R.R. Tolkien",
+    price: 14.99,
+    categoryName: "Fantasy",
+    rating: 4.9,
+    imagePath: "",
+    inStock: false
+  },
+  {
+    _id: uuid(),
+    title: "Snow Crash",
+    author: "Neal Stephenson",
+    price: 11.99,
+    categoryName: "Sci-Fi",
+    rating: 3.5,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "And Then There Were None",
+    author: "Agatha Christie",
+    price: 10.99,
+    categoryName: "Mystery",
+    rating: 4.2,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "A Game of Thrones",
+    author: "George R.R. Martin",
+    price: 14.99,
+    categoryName: "Fantasy",
+    rating: 4.8,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "Foundation",
+    author: "Isaac Asimov",
+    price: 12.99,
+    categoryName: "Sci-Fi",
+    rating: 4.4,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "The Murder of Roger Ackroyd",
+    author: "Agatha Christie",
+    price: 9.99,
+    categoryName: "Mystery",
+    rating: 2.0,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "A Clash of Kings",
+    author: "George R.R. Martin",
+    price: 13.99,
+    categoryName: "Fantasy",
+    rating: 4.7,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "Ready Player One",
+    author: "Ernest Cline",
+    price: 10.99,
+    categoryName: "Sci-Fi",
+    rating: 1.6,
+    imagePath: "",
+    inStock: false
+  },
+  {
+    _id: uuid(),
+    title: "The Girl on the Train",
+    author: "Paula Hawkins",
+    price: 11.99,
+    categoryName: "Mystery",
+    rating: 4.3,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "Harry Potter and the Chamber of Secrets",
+    author: "J.K. Rowling",
+    price: 14.99,
+    categoryName: "Fantasy",
+    rating: 3.9,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "Eragon",
+    author: "Christopher Paolini",
+    price: 12.99,
+    categoryName: "Fantasy",
+    rating: 1.5,
+    imagePath: "",
+    inStock: true
+  },
+  {
+    _id: uuid(),
+    title: "Blade Runner",
+    author: "Philip K. Dick",
+    price: 10.99,
+    categoryName: "Sci-Fi",
+    rating: 2.4,
+    imagePath: "",
+    inStock: true
+  }
 ];
