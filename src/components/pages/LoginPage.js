@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { API_ENDPOINTS } from '../../constants';
 import { AuthContext } from '../contexts/GlobalContexts';
 import NavBar from '../ui/NavBar';
+import '../../styles/login_page.css';
+
 
 export default function Login()
 {
@@ -68,25 +70,29 @@ export default function Login()
         <div>
             <NavBar />
             <div className="login-container">
-                <div className="login-header">
-                    <h2>Sign in</h2>
-
-                </div>
-                <div className="login-body">
-                    <label for="mail">Email Address</label>
-                    <input placeholder="something@somemail.com" class="text-input" type="text" required="" value={email} onChange={handleEmailInput}></input>
-                    <label for="mail">Password</label>
-                    <input placeholder="********" class="text-input" type="password" required="" value={password} onChange={handlePasswordChange}></input>
-                </div>
-                <div className="login-button">
-                    <button onClick={handleLogin}>
-                        Login
-                    </button>
-                </div>
-                <div className="login-footer">
-                    <button onClick={handleSignup}>
-                        Sign up
-                    </button>
+                <div className="login-content">
+                    <div className="login-chunk">
+                        <h2>Sign in</h2>
+                    </div>
+                    <div className="login-chunk">
+                        <label className="login-label" for="mail">Email Address</label>
+                        <input placeholder="something@somemail.com" class="text-input" type="text" required="" value={email} onChange={handleEmailInput}></input>
+                    </div>
+                    <div className="login-chunk">
+                        <label className="login-label"
+                            for="mail">Password</label>
+                        <input placeholder="********" class="text-input" type="password" required="" value={password} onChange={handlePasswordChange}></input>
+                    </div>
+                    <div className="login-chunk">
+                        <button onClick={handleLogin}>
+                            Login
+                        </button>
+                    </div>
+                    <div className="login-chunk">
+                        <button onClick={handleSignup}>
+                            Sign up
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 
 export const SearchContext = createContext();
 export const AuthContext = createContext();

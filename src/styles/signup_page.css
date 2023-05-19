@@ -1,32 +1,38 @@
-.login-container
+.signup-container
 {
     margin: 0;
-    /* height: 50vh; */
+    /* height: 75vh; */
     margin-top: 48px;
     display: flex;
     align-items: center;
 }
 
-.login-content
+.name-row{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.signup-content
 {
     margin: auto;
 }
 
-.login-chunk
+.signup-chunk
 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     display: flex;
     flex-direction: column;
 }
-.login-content button
+.signup-content button
 {
     padding: 8px;
     color: white;
     background-color: var(--col-3)
 }
 
-.login-label
+.signup-label
 {
     padding-bottom: 0.5rem;
 }
