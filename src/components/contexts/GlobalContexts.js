@@ -22,24 +22,11 @@ export function SearchProvider({ children })
 export function AuthProvider({ children })
 {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userData, setUserData] = useState();
 
-
-    const handleLoginUpdate = (state, data) =>
+    const handleLoginUpdate = (state) =>
     {
         setIsLoggedIn(state);
-
-        //if logged in set token too; else remove
-        if (state === true)
-        {
-            setUserData(data);
-        }
-        else
-        {
-            setUserData({});
-        }
         console.log("Is logged in: " + isLoggedIn);
-        console.log("DATA: " + userData);
     };
 
     return (<AuthContext.Provider value={{ isLoggedIn, handleLoginUpdate }}>

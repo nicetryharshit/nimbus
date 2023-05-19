@@ -30,7 +30,6 @@ export default function Login()
     {
         event.preventDefault();
         navigate(`/signup`);
-
     }
 
     const login = async (email, password) =>
@@ -51,7 +50,8 @@ export default function Login()
             if (res.ok)
             {
                 const data = await res.json();
-                handleLoginUpdate(true, data);
+                localStorage.setItem("token", data.encodedToken);
+                handleLoginUpdate(true);
                 navigate(location?.state?.from?.pathname);
             }
             else
