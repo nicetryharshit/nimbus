@@ -1,0 +1,18 @@
+.home-container
+{
+    /* width: 75vw; */
+    margin: auto;
+}
+
+.home-content
+{
+    display: block;
+    margin: auto;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.home-random-products
+{
+    display: flex;
+}
