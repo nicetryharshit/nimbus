@@ -24,8 +24,8 @@ export function AuthProvider({ children })
 
     const updateLoginState = (state) =>
     {
+        console.log("Is logged in: " + state);
         setIsLoggedIn(state);
-        console.log("Is logged in: " + isLoggedIn);
     };
 
     return (<AuthContext.Provider value={{ isLoggedIn, updateLoginState }}>
@@ -40,29 +40,32 @@ export function UserProvider({ children })
     const [userProfile, setUserProfile] = useState({
         firstName: '',
         lastName: '',
-        email: '',
-        addresses: []
+        email: ''
     });
 
     const [wishlistData, setWishlistData] = useState([]);
     const [cartData, setCartData] = useState([]);
 
-    const updateUserProfile = (user) =>
+    const updateUserProfile = ({ firstName, lastName, email }) =>
     {
+        // const  = foundUser;
+        console.log(`user updated ${firstName} ${lastName} ${email}`);
         setUserProfile({
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
             addresses: []
         });
     };
-    const updateWishlistData = (user) =>
+    const updateWishlistData = (wishlist) =>
     {
-        setWishlistData(user.wishlist);
+        console.log("wishlist update" + JSON.stringify(wishlist));
+        setWishlistData(wishlist);
     };
-    const updateCartData = (user) =>
+    const updateCartData = (cart) =>
     {
-        setCartData(user.cart);
+        console.log("cart update" + JSON.stringify(cart));
+        setCartData(cart);
     };
     return (
         <UserContext.Provider

@@ -18,7 +18,7 @@ export default function ProductCard({ props })
         //if product already in cart, don't add
         if (wishlistData.find((element) => element._id === _id))
         {
-            console.log(wishlistData);
+            // console.log(wishlistData);
         }
         else
         {
@@ -33,7 +33,7 @@ export default function ProductCard({ props })
                         body: JSON.stringify({ product: props })
                     });
                 const data = await res.json();
-                updateWishlistData(data);
+                updateWishlistData(data.wishlist);
 
             } catch (error)
             {
@@ -62,7 +62,7 @@ export default function ProductCard({ props })
                         body: JSON.stringify(requestBody)
                     });
                 const data = await res.json();
-                updateCartData(data);
+                updateCartData(data.cart);
 
             } catch (error)
             {
@@ -82,8 +82,8 @@ export default function ProductCard({ props })
                         body: JSON.stringify({ product: props })
                     });
                 const data = await res.json();
-                console.log(data);
-                updateCartData(data);
+                // console.log(data);
+                updateCartData(data.cart);
 
             } catch (error)
             {
@@ -101,7 +101,6 @@ export default function ProductCard({ props })
         event.stopPropagation();
         if (isLoggedIn)
         {
-            console.log("Add to cart");
             if (inStock)
                 addToCart();
         }
@@ -114,7 +113,6 @@ export default function ProductCard({ props })
         event.stopPropagation();
         if (isLoggedIn)
         {
-            console.log("Add to Wishlist");
             if (inStock)
             {
                 addToWishlist();
