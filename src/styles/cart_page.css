@@ -98,7 +98,14 @@
     padding: 8px;
     color: white;
     background-color: var(--col-3)
-
+}
+#cart-checkout-button
+{
+    margin: 16px;
+    padding: 16px;
+    color: white;
+    background-color: lightgreen;
+    color:darkgreen;
 }
 #cart-cart-button
 {
