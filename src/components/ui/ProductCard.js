@@ -125,7 +125,7 @@ export default function ProductCard({ props })
         <div className="product-card" onClick={handleCardClick}>
             <div className="product-card-image">
                 <img src={bookCover} alt={`book: ${title}`} />
-                {/* <i>{rating}</i> */}
+                <p>{rating.toFixed(1)}</p>
             </div>
             <div className="product-card-desc">
                 <b>{title}</b>

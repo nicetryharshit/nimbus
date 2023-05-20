@@ -99,7 +99,7 @@ export default function Wishlist()
                     {wishlistData.map((element) => (<div className="wishlist-product-card">
                         <div className="wishlist-product-card-image">
                             <img src={bookCover} alt={`book: ${element.title}`} />
-                            {/* <i>{rating}</i> */}
+                            <p>{element.rating.toFixed(1)}</p>
                         </div>
                         <div className="wishlist-product-card-desc">
                             <b>{element.title}</b>

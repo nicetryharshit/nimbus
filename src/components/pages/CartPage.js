@@ -71,7 +71,7 @@ export default function Cart()
                     {cartData.map((element) => (<div className="cart-product-card">
                         <div className="cart-product-card-image">
                             <img src={bookCover} alt={`book: ${element.title}`} />
-                            {/* <i>{rating}</i> */}
+                            <p>{element.rating.toFixed(1)}</p>
                         </div>
                         <div className="cart-product-card-desc">
                             <b>{element.title}</b>

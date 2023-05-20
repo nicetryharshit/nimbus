@@ -10,6 +10,7 @@
     border: 0px solid white;
     border-radius: 4px 4px;
     cursor: pointer;
+    position: relative;
 }
 
 .product-card>div
@@ -17,6 +18,18 @@
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
+
+.product-card-image p {
+    margin: auto;
+    padding: 0.25rem;
+    position: absolute;
+    top: 1%;
+    right: 4%;
+    transform: translate(50%, -50%);
+    border-radius: 4px 4px;
+    color: white;
+    background-color: var(--col-3)
+  }
 
 .product-card-image
 {
