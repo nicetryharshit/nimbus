@@ -31,6 +31,11 @@
     color: white
 }
 
+/* #navbar-rhs button :hover
+{
+    border-bottom: 1px solid white;
+} */
+
 .navbar-chunk {
     padding: auto;
     /* border: var(--testBorder); */

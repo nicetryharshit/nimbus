@@ -2,7 +2,8 @@ import { React, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/product_card.css';
 import bookCover from '../../images/book-cover.png';
-import { AuthContext } from '../contexts/GlobalContexts';
+import { AuthContext, UserContext } from '../contexts/GlobalContexts';
+import { API_ENDPOINTS } from '../../constants';
 
 export default function ProductCard({ props })
 {
@@ -10,6 +11,21 @@ export default function ProductCard({ props })
 
     const { _id, author, title, price, inStock, rating, imagePath } = props;
     const navigate = useNavigate();
+
+    const addToCart = async () =>
+    {
+        try
+        {
+            const res = await fetch(API_ENDPOINTS.CART);
+            const data = await res.json();
+            console.log(data);
+
+        } catch (error)
+        {
+            console.log(error);
+        }
+    };
+
     const handleCardClick = () =>
     {
         navigate(`/product/${_id}`);
@@ -18,10 +34,15 @@ export default function ProductCard({ props })
     {
         event.stopPropagation();
         if (isLoggedIn)
+        {
             console.log("Add to cart");
+            if (inStock)
+                addToCart();
+        }
         else
             navigate(`/login`);
     };
+
     const handleWishlistClick = (event) =>
     {
         event.stopPropagation();

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { API_ENDPOINTS } from '../../constants';
-import { AuthContext } from '../contexts/GlobalContexts';
+import { AuthContext, UserContext } from '../contexts/GlobalContexts';
 import NavBar from '../ui/NavBar';
 import '../../styles/login_page.css';
 
@@ -11,7 +11,8 @@ export default function Login()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { handleLoginUpdate } = useContext(AuthContext);
+    const { updateLoginState } = useContext(AuthContext);
+    const { userProfile, updateUserProfile, updateCartData, updateWishlistData } = useContext(UserContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handleEmailInput = (event) =>
@@ -53,7 +54,15 @@ export default function Login()
             {
                 const data = await res.json();
                 localStorage.setItem("token", data.encodedToken);
-                handleLoginUpdate(true);
+                // console.log(data);
+                // console.log(data.encodedToken);
+                // console.log(data.foundUser);
+
+                updateUserProfile(data.foundUser);
+                updateCartData(data.foundUser);
+                updateWishlistData(data.foundUser);
+                updateLoginState(true);
+
                 navigate(location?.state?.from?.pathname);
             }
             else
