@@ -8,15 +8,41 @@ import { API_ENDPOINTS } from '../../constants';
 export default function ProductCard({ props })
 {
     const { isLoggedIn } = useContext(AuthContext);
-    const { cartData, updateCartData } = useContext(UserContext);
+    const { cartData, updateCartData, wishlistData, updateWishlistData } = useContext(UserContext);
 
     const { _id, author, title, price, inStock, rating, imagePath } = props;
     const navigate = useNavigate();
 
+    const addToWishlist = async () =>
+    {
+        //if product already in cart, don't add
+        if (wishlistData.find((element) => element._id === _id))
+        {
+            console.log(wishlistData);
+        }
+        else
+        {
+            try
+            {
+                const res = await fetch(API_ENDPOINTS.WISHLIST,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'authorization': localStorage.getItem("token"), 'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ product: props })
+                    });
+                const data = await res.json();
+                updateWishlistData(data);
+
+            } catch (error)
+            {
+                console.log(error);
+            }
+        }
+    }
     const addToCart = async () =>
     {
-        console.log(props);
-
         //if product already in cart, increment
         if (cartData.find((element) => element._id === _id))
         {
@@ -36,7 +62,6 @@ export default function ProductCard({ props })
                         body: JSON.stringify(requestBody)
                     });
                 const data = await res.json();
-                console.log(data);
                 updateCartData(data);
 
             } catch (error)
@@ -46,7 +71,6 @@ export default function ProductCard({ props })
         }
         else
         {
-
             try
             {
                 const res = await fetch(API_ENDPOINTS.CART,
@@ -89,7 +113,13 @@ export default function ProductCard({ props })
     {
         event.stopPropagation();
         if (isLoggedIn)
+        {
             console.log("Add to Wishlist");
+            if (inStock)
+            {
+                addToWishlist();
+            }
+        }
         else
             navigate(`/login`);
     };
