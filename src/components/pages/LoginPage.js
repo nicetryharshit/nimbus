@@ -54,16 +54,11 @@ export default function Login()
             {
                 const data = await res.json();
                 localStorage.setItem("token", data.encodedToken);
-                console.log(data);
-                console.log(data.foundUser);
-                console.log(data.foundUser.cart);
-                console.log(data.foundUser.wishlist);
                 updateUserProfile(data.foundUser);
                 updateCartData(data.foundUser.cart);
                 updateWishlistData(data.foundUser.wishlist);
                 updateLoginState(true);
-
-                navigate(location?.state?.from?.pathname);
+                navigate(location?.state?.from?.pathname === undefined ? `/store` : location?.state?.from?.pathname);
             }
             else
             {

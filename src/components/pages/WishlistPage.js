@@ -3,6 +3,7 @@ import { UserContext } from '../contexts/GlobalContexts';
 import NavBar from '../ui/NavBar';
 import bookCover from '../../images/book-cover.png';
 import { API_ENDPOINTS } from '../../constants';
+import '../../styles/wishlist_page.css';
 
 export default function Wishlist()
 {
@@ -51,7 +52,6 @@ export default function Wishlist()
                     });
                 const data = await res.json();
                 updateCartData(data);
-                console.log("MOVED TO CART:" + data);
 
             } catch (error)
             {
@@ -72,9 +72,7 @@ export default function Wishlist()
                     },
                 });
             const data = await res.json();
-            console.log(data);
-            updateWishlistData(data);
-            console.log("DELETED: " + data);
+            updateWishlistData(data.wishlist);
         } catch (error)
         {
             console.log(error);
@@ -89,44 +87,36 @@ export default function Wishlist()
 
     const handleRemoveFromWishlist = (id) =>
     {
-        removeFromWishlist();
+        removeFromWishlist(id);
     };
 
-    console.log(wishlistData);
     return (
         <div>
             <NavBar />
             <div className="wishlist-container">
-                <b>Wishlist</b>
-                <div>
-                    {wishlistData.map(element => (<div>
-                        <div className="wishlist-product-card">
-                            <div className="wishlist-product-card-image">
-                                <img src={bookCover} alt={`book: ${element.title}`} />
-                                {/* <i>{rating}</i> */}
+                <h2 style={{ paddingTop: "2rem" }}>Wishlist</h2>
+                <div className="wishlist-content">
+                    {wishlistData.map((element) => (<div className="wishlist-product-card">
+                        <div className="wishlist-product-card-image">
+                            <img src={bookCover} alt={`book: ${element.title}`} />
+                            {/* <i>{rating}</i> */}
+                        </div>
+                        <div className="wishlist-product-card-desc">
+                            <b>{element.title}</b>
+                            <p>{element.author}</p>
+                        </div>
+                        <div className="wishlist-product-card-price">
+                            <p>${element.price}</p>
+                        </div>
+                        <div className="wishlist-product-card-buttons-container">
+                            <div className="wishlist-product-card-buttons">
+                                {<button id="wishlist-wishlist-button" onClick={() => handleRemoveFromWishlist(element._id)}>Remove from wishlist</button>}
+                                {<button id="wishlist-cart-button" onClick={() => handleMoveToCart(element._id)}>Move to cart</button>}
                             </div>
-                            <div className="wishlist-product-card-desc">
-                                <b>{element.title}</b>
-                                <p>{element.title}</p>
-                            </div>
-                            <div className="wishlist-product-card-price">
-                                <p>${element.title}</p>
-                            </div>
-                            <div className="wishlist-product-card-buttons-container">
-                                <div className="wishlist-product-card-buttons">
-                                    {<button id="wishlist-wishlist-button" onClick={() => handleRemoveFromWishlist(element._id)}>Remove from wishlist</button>}
-                                    {<button id="wishlist-cart-button" onClick={() => handleMoveToCart(element._id)}>Move to cart</button>}
-                                </div>
-                            </div >
                         </div >
                     </div>))}
                 </div>
             </div>
-        </div>
+        </div >
     );
-}
-
-const WishlistProductCard = (props) =>
-{
-    return
 }
