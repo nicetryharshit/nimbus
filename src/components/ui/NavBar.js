@@ -37,7 +37,7 @@ export default function NavBar()
                     <NavLink className="navbar-item" to="/"><button id="navbar-title">Nimbus</button></NavLink>
                     <input id="search-bar" className="navbar-item" type="text" placeholder="Search for products" onKeyDown={handleSearchKeyDown} onChange={handleSearchInputChange} value={searchQuery} />
                     <NavLink className="navbar-item" to="/store"><button>Search</button></NavLink>
-                    <button onClick={handleTest}>test</button>
+                    {/* <button onClick={handleTest}>test</button> */}
                 </div>
                 <div id="navbar-rhs" className="navbar-chunk">
                     <NavLink className="navbar-item" to="/wishlist"><button>Wishlist {isLoggedIn && `(${wishlistData.length})`}</button></NavLink>
