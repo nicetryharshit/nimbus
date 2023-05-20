@@ -2,15 +2,17 @@ import React, { useContext } from 'react';
 import { useNavigate, NavLink } from "react-router-dom";
 import '../../styles/navbar.css';
 import '../../styles/styles.css';
-import { SearchContext } from '../contexts/GlobalContexts';
+import { AuthContext, SearchContext, UserContext } from '../contexts/GlobalContexts';
 
 export default function NavBar()
 {
     const navigate = useNavigate();
-    const { searchQuery, handleSearchQueryUpdate } = useContext(SearchContext);
+    const { searchQuery, updateSearchQuery } = useContext(SearchContext);
+    const { isLoggedIn, updateLoginState } = useContext(AuthContext);
+    const { cartData, wishlistData, userProfile } = useContext(UserContext);
     const handleSearchInputChange = (event) =>
     {
-        handleSearchQueryUpdate(event.target.value);
+        updateSearchQuery(event.target.value);
     };
 
     const handleSearchKeyDown = (event) =>
@@ -21,6 +23,13 @@ export default function NavBar()
         }
     };
 
+    const handleTest = () =>
+    {
+        console.log("User:  " + JSON.stringify(userProfile));
+        console.log("Cart: " + JSON.stringify(cartData));
+        console.log("Wishlist: " + JSON.stringify(wishlistData));
+    };
+
     return (
         <div className="navbar-container">
             <div className="navbar">
@@ -28,14 +37,17 @@ export default function NavBar()
                     <NavLink className="navbar-item" to="/"><button id="navbar-title">Nimbus</button></NavLink>
                     <input id="search-bar" className="navbar-item" type="text" placeholder="Search for products" onKeyDown={handleSearchKeyDown} onChange={handleSearchInputChange} value={searchQuery} />
                     <NavLink className="navbar-item" to="/store"><button>Search</button></NavLink>
+                    {/* <button onClick={handleTest}>test</button> */}
                 </div>
-                <div className="navbar-chunk">
-                    <NavLink className="navbar-item" to="/wishlist"><button>Wishlist</button></NavLink>
-                    <NavLink className="navbar-item" to="/cart"><button>Cart</button></NavLink>
-                    <NavLink className="navbar-item" to="/login"><button>Login</button></NavLink>
+                <div id="navbar-rhs" className="navbar-chunk">
+                    <NavLink className="navbar-item" to="/wishlist"><button>Wishlist {isLoggedIn && `(${wishlistData.length})`}</button></NavLink>
+                    <NavLink className="navbar-item" to="/cart"><button>Cart {isLoggedIn && `(${cartData.length})`}</button></NavLink>
+                    {!isLoggedIn
+                        ? <NavLink className="navbar-item" to="/login"><button>Login</button></NavLink>
+                        : (<button onClick={() => updateLoginState(false, null)} >Logout</button>)}
                     <NavLink className="navbar-item" to="/store"><button>Explore</button></NavLink>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }

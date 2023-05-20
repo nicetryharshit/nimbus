@@ -10,6 +10,7 @@ import Login from "./components/pages/LoginPage";
 import Signup from "./components/pages/SignupPage";
 
 import Mockman from "mockman-js";
+import RequiresAuth from "./components/other/RequiresAuth";
 
 function App()
 {
@@ -19,8 +20,8 @@ function App()
 				<Route path="/" element={<Home />} />
 				<Route exact path="/store" element={<StorePage />} />
 				<Route path="/product/:_id" element={<ProductPage />} />
-				<Route exact path="/wishlist" element={<Wishlist />} />
-				<Route exact path="/cart" element={<Cart />} />
+				<Route exact path="/wishlist" element={<RequiresAuth><Wishlist /></RequiresAuth>} />
+				<Route exact path="/cart" element={<RequiresAuth><Cart /></RequiresAuth>} />
 				<Route exact path="/login" element={<Login />} />
 				<Route exact path="/signup" element={<Signup />} />
 				<Route exact path="/mockman" element={<Mockman />} />

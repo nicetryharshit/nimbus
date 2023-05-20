@@ -7,5 +7,7 @@ export const API_ENDPOINTS = {
     CART: '/api/user/cart',
     CART_PRODUCT: (productId) => `/api/user/cart/${productId}`,
     WISHLIST: '/api/user/wishlist',
-    WISHLIST_PRODUCT: (productId) => `/api/user/wishlist/${productId}`
+    WISHLIST_PRODUCT: (productId) => `/api/user/wishlist/${productId}`,
+    LOGIN: '/api/auth/login',
+    SIGNUP: '/api/auth/signup'
 };

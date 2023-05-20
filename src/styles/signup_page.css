@@ -1,0 +1,38 @@
+.signup-container
+{
+    margin: 0;
+    /* height: 75vh; */
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.name-row{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.signup-content
+{
+    margin: auto;
+}
+
+.signup-chunk
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.signup-content button
+{
+    padding: 8px;
+    color: white;
+    background-color: var(--col-3)
+}
+
+.signup-label
+{
+    padding-bottom: 0.5rem;
+}

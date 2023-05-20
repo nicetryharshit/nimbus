@@ -1,4 +1,4 @@
-.product-info-body-container
+.product-product-info-body-container
 {
     display: flex;
     justify-content: center;
@@ -6,10 +6,111 @@
     width: 100%;
     height: 100vh;
 }
-
-.product-info-card
+.product-product-column
 {
-    border-radius: 8px;
-    background-color: thistle;
-    padding: 16px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.product-product-card
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:636px) {
+    .product-product-card
+    {
+        display: block;
+        justify-content: center;
+    }
+}
+.product-product-card>div
+{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.product-product-card-image p {
+    margin: auto;
+    padding: 0.25rem;
+    position: absolute;
+    top: 1%;
+    right: 4%;
+    transform: translate(50%, -50%);
+    border-radius: 4px 4px;
+    color: white;
+    background-color: var(--col-3)
+  }
+
+.product-product-card-image
+{
+    display: flex;
+    justify-content: center;
+    background-color: var(--col-1);
+    max-height: 66%;
+}
+.product-product-card-image>img
+{
+    padding:1rem;
+}
+
+.product-product-card-desc
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.product-product-card-desc > p
+{
+    padding :0;
+    margin:0;
+    border:0;
+}
+.product-product-card-desc > b
+{
+    overflow: hidden;
+    white-space: nowrap;
+}
+.product-product-card-price
+{
+    padding: 1rem;
+}
+.product-product-card-price > p
+{
+    padding :0;
+    margin:0;
+    border:0;
+}
+
+.product-product-card-buttons
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.product-product-card-buttons>button
+{
+    width: 100%;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+#wishlist-button
+{
+    padding: 8px;
+    color: white;
+    background-color: var(--col-3)
+
+}
+#cart-button
+{
+    padding: 8px;
+    color: white;
+    background-color: var(--col-4)
+}
+#outOfStock-button
+{
+    padding: 8px;
+    background-color: var(--col-2)
 }

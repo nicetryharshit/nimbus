@@ -1,4 +1,19 @@
-.product-card
+.cart-container
+{
+    width: 75vw;
+    margin: auto;
+}
+
+.cart-content
+{
+    display: flex;
+    margin: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.cart-product-card
 {
     /* display: flex; */
     /* flex-direction: column; */
@@ -13,13 +28,20 @@
     position: relative;
 }
 
-.product-card>div
+.cart-product-card>div
 {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
 
-.product-card-image p {
+.cart-product-card-image
+{
+    display: flex;
+    justify-content: center;
+    background-color: var(--col-1);
+    max-height: 66%;
+}
+.cart-product-card-image p {
     margin: auto;
     padding: 0.25rem;
     position: absolute;
@@ -29,70 +51,65 @@
     border-radius: 4px 4px;
     color: white;
     background-color: var(--col-3)
-  }
-
-.product-card-image
-{
-    display: flex;
-    justify-content: center;
-    background-color: var(--col-1);
-    max-height: 66%;
 }
-.product-card-image>img
+
+.cart-product-card-image>img
 {
     padding:1rem;
 }
 
-.product-card-desc
+.cart-product-card-desc
 {
     display: flex;
     flex-direction: column;
 }
-.product-card-desc > p
+.cart-product-card-desc > p
 {
     padding :0;
     margin:0;
     border:0;
 }
-.product-card-desc > b
+.cart-product-card-desc > b
 {
     overflow: hidden;
     white-space: nowrap;
 }
-.product-card-price > p
+.cart-product-card-price > p
 {
     padding :0;
     margin:0;
     border:0;
 }
 
-.product-card-buttons
+.cart-product-card-buttons
 {
     display: flex;
     justify-content: space-around;
 }
 
-.product-card-buttons>button
+.cart-product-card-buttons>button
 {
     width: 100%;
     margin-left: 1px;
     margin-right: 1px;
 }
-#wishlist-button
+#cart-wishlist-button
 {
     padding: 8px;
     color: white;
     background-color: var(--col-3)
-
 }
-#cart-button
+#cart-checkout-button
+{
+    margin: 16px;
+    padding: 16px;
+    color: white;
+    background-color: lightgreen;
+    color:darkgreen;
+}
+#cart-cart-button
 {
     padding: 8px;
     color: white;
     background-color: var(--col-4)
-}
-#outOfStock-button
-{
-    padding: 8px;
-    background-color: var(--col-2)
 }

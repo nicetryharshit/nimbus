@@ -1,0 +1,32 @@
+.login-container
+{
+    margin: 0;
+    /* height: 50vh; */
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.login-content
+{
+    margin: auto;
+}
+
+.login-chunk
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.login-content button
+{
+    padding: 8px;
+    color: white;
+    background-color: var(--col-3)
+}
+
+.login-label
+{
+    padding-bottom: 0.5rem;
+}
