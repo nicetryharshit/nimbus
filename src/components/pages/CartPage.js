@@ -68,7 +68,7 @@ export default function Cart()
             <div className="cart-container">
                 <h2 style={{ paddingTop: "2rem" }}>Cart</h2>
                 <div className="cart-content">
-                    {cartData.map((element) => (<div className="cart-product-card">
+                    {cartData !== undefined && cartData !== null && cartData.length > 0 && cartData.map((element) => (<div className="cart-product-card">
                         <div className="cart-product-card-image">
                             <img src={bookCover} alt={`book: ${element.title}`} />
                             <p>{element.rating.toFixed(1)}</p>

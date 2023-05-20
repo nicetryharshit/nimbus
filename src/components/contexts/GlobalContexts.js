@@ -12,7 +12,7 @@ export function SearchProvider({ children })
         setSearchQuery(searchQueryString);
     };
 
-    return (<SearchContext.Provider value={{ searchQuery, handleSearchQueryUpdate: updateSearchQuery }}>
+    return (<SearchContext.Provider value={{ searchQuery, updateSearchQuery }}>
         {children}
     </SearchContext.Provider>)
 };

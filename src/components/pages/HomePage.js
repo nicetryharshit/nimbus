@@ -14,6 +14,10 @@ export default function Home()
     {
         navigate(`/product/${id}`);
     }
+    const handleExploreStore = () =>
+    {
+        navigate(`/store`);
+    }
     const fetchAllProducts = async () =>
     {
         try
@@ -56,7 +60,7 @@ export default function Home()
             <div className="home-container">
                 {/* <h2 style={{ paddingTop: "2rem" }}>Home</h2> */}
                 <div className="home-content">
-                    <button style={
+                    <button onClick={handleExploreStore} style={
                         {
                             backgroundColor: "var(--col-3)",
                             marginTop: "0.5rem",

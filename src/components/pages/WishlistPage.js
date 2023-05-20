@@ -30,7 +30,8 @@ export default function Wishlist()
                         body: JSON.stringify(requestBody)
                     });
                 const data = await res.json();
-                updateCartData(data);
+                console.log("C:" + JSON.stringify(data));
+                updateCartData(data.cart);
 
             } catch (error)
             {
@@ -51,7 +52,8 @@ export default function Wishlist()
                         body: JSON.stringify({ product: props })
                     });
                 const data = await res.json();
-                updateCartData(data);
+                console.log("C:" + JSON.stringify(data));
+                updateCartData(data.cart);
 
             } catch (error)
             {
@@ -72,6 +74,7 @@ export default function Wishlist()
                     },
                 });
             const data = await res.json();
+            console.log("W:" + JSON.stringify(data));
             updateWishlistData(data.wishlist);
         } catch (error)
         {

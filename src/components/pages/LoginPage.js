@@ -29,6 +29,11 @@ export default function Login()
         event.preventDefault();
         login(email, password);
     }
+    const handleLoginGuest = (event) =>
+    {
+        event.preventDefault();
+        login("ab@gmail.com", "ab");
+    }
     const handleSignup = (event) =>
     {
         event.preventDefault();
@@ -90,6 +95,11 @@ export default function Login()
                     <div className="login-chunk">
                         <button onClick={handleLogin}>
                             Login
+                        </button>
+                    </div>
+                    <div className="login-chunk">
+                        <button onClick={handleLoginGuest}>
+                            Guest login
                         </button>
                     </div>
                     <div className="login-chunk">
