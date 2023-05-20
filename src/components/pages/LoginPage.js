@@ -55,7 +55,7 @@ export default function Login()
                 const data = await res.json();
                 localStorage.setItem("token", data.encodedToken);
                 // console.log(data);
-                // console.log(data.encodedToken);
+                console.log(data.encodedToken);
                 // console.log(data.foundUser);
 
                 updateUserProfile(data.foundUser);
