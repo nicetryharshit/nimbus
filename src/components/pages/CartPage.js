@@ -161,15 +161,17 @@ export default function Cart()
                         </div >
                     </div>))}
                 </div>
-                {cartData.length > 0 ?
-                    <div>
-                        <h2>Total Price: ${cartData.reduce((acc, curr) => acc + curr.price, 0)}</h2>
-                        <button id="cart-checkout-button">Checkout</button>
-                    </div>
-                    :
-                    <div>
-                        <h2>Cart empty</h2>
-                    </div>}
+                <div id="cart-breakdown-container">
+                    {cartData.length > 0 ?
+                        <div id="cart-breakdown">
+                            <h2>Total Price: ${cartData.reduce((acc, curr) => acc + (curr.price * curr.qty), 0)}</h2>
+                            <button id="cart-checkout-button">Checkout</button>
+                        </div>
+                        :
+                        <div>
+                            <h2>Cart empty</h2>
+                        </div>}
+                </div>
             </div>
         </div >
     );

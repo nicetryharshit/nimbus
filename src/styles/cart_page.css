@@ -17,8 +17,8 @@
 {
     /* display: flex; */
     /* flex-direction: column; */
-    min-height: 400px;
-    max-height: 400px;
+    min-height: auto;
+    max-height: auto;
     min-width: 250px;
     max-width: 250px;
     /* background-color: var(--col-1); */
@@ -136,3 +136,19 @@
     width: 2em;
     height: 2em;
 }
+
+#cart-breakdown-container
+{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#cart-breakdown
+{
+    border: 1px solid black;
+    border-radius: 4px 4px;
+    width: fit-content;
+    padding: 2em;
+}
+
