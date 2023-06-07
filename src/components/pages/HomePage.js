@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Home()
 {
+    console.log('Home');
     const navigate = useNavigate();
     const [allProducts, setAllProducts] = useState([]);
     const handleProductClick = (id) =>
