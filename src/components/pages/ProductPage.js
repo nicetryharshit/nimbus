@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import NavBar from '../ui/NavBar';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
 import '../../styles/product_page.css';
 import bookCover from '../../images/book-cover.png';
-import { UserContext } from '../contexts/GlobalContexts';
+import { UserContext, AuthContext } from '../contexts/GlobalContexts';
 import { API_ENDPOINTS } from '../../constants';
 
 export default function ProductPage()
@@ -13,6 +13,9 @@ export default function ProductPage()
     const [product, setProduct] = useState();
     const { author, title, price, inStock, rating } = product || {};
     const { cartData, updateCartData, wishlistData, updateWishlistData } = useContext(UserContext);
+    const { isLoggedIn } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const fetchProductByID = async () =>
     {
@@ -33,12 +36,28 @@ export default function ProductPage()
 
     const handleAddToCart = () =>
     {
-        addToCart();
+        if (isLoggedIn)
+        {
+            if (inStock)
+            {
+                addToCart();
+            }
+        }
+        else
+            navigate(`/login`);
     }
 
     const handleAddToWishlist = () =>
     {
-        addToWishlist();
+        if (isLoggedIn)
+        {
+            if (inStock)
+            {
+                addToWishlist();
+            }
+        }
+        else
+            navigate(`/login`);
     }
 
     const addToCart = async () =>
