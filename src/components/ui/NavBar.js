@@ -3,13 +3,15 @@ import { useNavigate, NavLink } from "react-router-dom";
 import '../../styles/navbar.css';
 import '../../styles/styles.css';
 import { AuthContext, SearchContext, UserContext } from '../contexts/GlobalContexts';
+// import { ToastContext } from '../contexts/GlobalContexts';
 
 export default function NavBar()
 {
+    // const { showToast } = useContext(ToastContext);
     const navigate = useNavigate();
     const { searchQuery, updateSearchQuery } = useContext(SearchContext);
     const { isLoggedIn, updateLoginState } = useContext(AuthContext);
-    const { cartData, wishlistData, userProfile } = useContext(UserContext);
+    const { cartData, wishlistData } = useContext(UserContext);
     const handleSearchInputChange = (event) =>
     {
         updateSearchQuery(event.target.value);
@@ -23,12 +25,11 @@ export default function NavBar()
         }
     };
 
-    const handleTest = () =>
-    {
-        console.log("User:  " + JSON.stringify(userProfile));
-        console.log("Cart: " + JSON.stringify(cartData));
-        console.log("Wishlist: " + JSON.stringify(wishlistData));
-    };
+    // const handleTest = () =>
+    // {
+    //     console.log("TOAST");
+    //     showToast('This is a toast message!');
+    // };
 
     return (
         <div className="navbar-container">

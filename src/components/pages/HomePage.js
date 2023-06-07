@@ -3,7 +3,7 @@ import NavBar from '../ui/NavBar';
 import '../../styles/home_page.css';
 import { useState } from 'react';
 import { API_ENDPOINTS } from '../../constants';
-import bookCover from '../../images/book-cover.png';
+// import bookCover from '../../images/book-cover.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home()
@@ -11,6 +11,7 @@ export default function Home()
     console.log('Home');
     const navigate = useNavigate();
     const [allProducts, setAllProducts] = useState([]);
+
     const handleProductClick = (id) =>
     {
         navigate(`/product/${id}`);

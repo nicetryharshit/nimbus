@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import NavBar from '../ui/NavBar';
 import '../../styles/cart_page.css';
 import { UserContext } from '../contexts/GlobalContexts';
