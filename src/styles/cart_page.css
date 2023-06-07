@@ -113,3 +113,26 @@
     color: white;
     background-color: var(--col-4)
 }
+
+#cart-product-card-inc-dec-container
+{
+    display: flex;
+    justify-content: center;
+}
+
+#cart-product-card-inc-dec-container>button
+{
+    padding: 0;
+    margin: 0;
+    width: 2em;
+    height: 2em;
+    background-color:cyan;
+    border-radius: 2em;
+}
+#cart-product-card-inc-dec-container>p
+{
+    padding: 0;
+    margin: 0;
+    width: 2em;
+    height: 2em;
+}
