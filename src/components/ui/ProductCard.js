@@ -2,15 +2,17 @@ import { React, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/product_card.css';
 import bookCover from '../../images/book-cover.png';
-import { AuthContext, UserContext } from '../contexts/GlobalContexts';
+import { AuthContext, UserContext, ToastContext } from '../contexts/GlobalContexts';
 import { API_ENDPOINTS } from '../../constants';
 
 export default function ProductCard({ props })
 {
     const { isLoggedIn } = useContext(AuthContext);
+    const { showToast } = useContext(ToastContext);
+
     const { cartData, updateCartData, wishlistData, updateWishlistData } = useContext(UserContext);
 
-    const { _id, author, title, price, inStock, rating, imagePath } = props;
+    const { _id, author, title, price, inStock, rating } = props;
     const navigate = useNavigate();
 
     const addToWishlist = async () =>
@@ -19,6 +21,7 @@ export default function ProductCard({ props })
         if (wishlistData.find((element) => element._id === _id))
         {
             // console.log(wishlistData);
+            showToast("Already in wishlist");
         }
         else
         {
@@ -34,6 +37,7 @@ export default function ProductCard({ props })
                     });
                 const data = await res.json();
                 updateWishlistData(data.wishlist);
+                showToast("Added to wishlist");
 
             } catch (error)
             {
@@ -63,6 +67,7 @@ export default function ProductCard({ props })
                     });
                 const data = await res.json();
                 updateCartData(data.cart);
+                showToast("Added to cart");
 
             } catch (error)
             {
@@ -84,6 +89,7 @@ export default function ProductCard({ props })
                 const data = await res.json();
                 // console.log(data);
                 updateCartData(data.cart);
+                showToast("Added to cart");
 
             } catch (error)
             {

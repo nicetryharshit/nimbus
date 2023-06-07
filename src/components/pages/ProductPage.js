@@ -4,12 +4,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
 import '../../styles/product_page.css';
 import bookCover from '../../images/book-cover.png';
-import { UserContext, AuthContext } from '../contexts/GlobalContexts';
+import { UserContext, AuthContext, ToastContext } from '../contexts/GlobalContexts';
 import { API_ENDPOINTS } from '../../constants';
 
 export default function ProductPage()
 {
     const { _id } = useParams();
+    const { showToast } = useContext(ToastContext);
     const [product, setProduct] = useState();
     const { author, title, price, inStock, rating } = product || {};
     const { cartData, updateCartData, wishlistData, updateWishlistData } = useContext(UserContext);
@@ -82,6 +83,7 @@ export default function ProductPage()
                     });
                 const data = await res.json();
                 updateCartData(data.cart);
+                showToast("Added to cart");
 
             } catch (error)
             {
@@ -103,6 +105,7 @@ export default function ProductPage()
                 const data = await res.json();
                 // console.log(data);
                 updateCartData(data.cart);
+                showToast("Added to cart");
 
             } catch (error)
             {
@@ -113,10 +116,14 @@ export default function ProductPage()
 
     const addToWishlist = async () =>
     {
-        //if product already in cart, don't add
-        if (wishlistData.find((element) => _id === _id))
+        //if product already in wishlist, don't add
+        if (wishlistData.find((element) => element._id === _id))
         {
-            // console.log(wishlistData);
+            console.log("data: " + JSON.stringify(wishlistData));
+            console.log("this product id: " + _id);
+            console.log(wishlistData.map((element) => element._id));
+            console.log("SAME? :" + wishlistData[0]._id === _id);
+            showToast("Already in wishlist");
         }
         else
         {
@@ -132,6 +139,7 @@ export default function ProductPage()
                     });
                 const data = await res.json();
                 updateWishlistData(data.wishlist);
+                showToast("Added to wishlist");
 
             } catch (error)
             {

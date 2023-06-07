@@ -1,16 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { API_ENDPOINTS } from '../../constants';
-import { AuthContext, UserContext } from '../contexts/GlobalContexts';
+import { AuthContext, UserContext, ToastContext } from '../contexts/GlobalContexts';
 import NavBar from '../ui/NavBar';
 import '../../styles/login_page.css';
 
 
 export default function Login()
 {
+    const { showToast } = useContext(ToastContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
     const { updateLoginState } = useContext(AuthContext);
     const { userProfile, updateUserProfile, updateCartData, updateWishlistData } = useContext(UserContext);
     const location = useLocation();
@@ -64,9 +64,11 @@ export default function Login()
                 updateWishlistData(data.foundUser.wishlist);
                 updateLoginState(true);
                 navigate(location?.state?.from?.pathname === undefined ? `/store` : location?.state?.from?.pathname);
+                showToast("Login successful");
             }
             else
             {
+                showToast("Login failed");
                 console.log('LOGIN FAILED');
             }
         }

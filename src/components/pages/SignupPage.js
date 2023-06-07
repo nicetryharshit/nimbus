@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import NavBar from '../ui/NavBar';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { API_ENDPOINTS } from '../../constants';
-import { AuthContext, UserContext } from '../contexts/GlobalContexts';
+import { AuthContext, UserContext, ToastContext } from '../contexts/GlobalContexts';
 import '../../styles/signup_page.css';
 
 
@@ -10,7 +10,7 @@ export default function Signup()
 {
     const location = useLocation();
     const navigate = useNavigate();
-
+    const { showToast } = useContext(ToastContext);
     const { updateLoginState } = useContext(AuthContext);
     const { updateUserProfile, updateCartData, updateWishlistData } = useContext(UserContext);
 
@@ -73,9 +73,12 @@ export default function Signup()
                 updateWishlistData(data.foundUser);
                 updateLoginState(true);
                 navigate(location?.state?.from?.pathname);
+                showToast("Sign up successful");
+
             }
             else
             {
+                showToast("Sign up failed");
                 console.log('SIGNUP FAILED');
             }
         }
